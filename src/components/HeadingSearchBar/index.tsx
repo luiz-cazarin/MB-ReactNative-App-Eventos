@@ -3,10 +3,11 @@ import { styles } from "./styles";
 import { Searchbar } from "react-native-paper";
 import { useState } from "react";
 
-export function Heading() {
+export function HeadingSearchBar({ handleInputName }: any) {
   const [searchNameEvent, setSearchNameEvent] = useState("");
 
   const onChangeSearch = (query: any) => {
+    handleInputName(query);
     setSearchNameEvent(query);
   };
 

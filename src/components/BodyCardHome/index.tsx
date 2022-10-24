@@ -1,14 +1,18 @@
 import { View, Text, ViewProps, FlatList, ScrollView } from "react-native";
 import { styles } from "./styles";
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { CategoryCard } from "../CategoryCard";
 import { RecommendationsCard } from "../RecommendationsCard";
 import { EventsCard } from "../EventsCard";
 import { EVENTS } from "../../utils/events";
 
-export function BodyCardHome() {
+export function BodyCardHome({ eventName }: any) {
   const [recomendedEvents, setRecomendedEvents] = useState(EVENTS);
   const [events, setEvents] = useState(EVENTS);
+
+  function filteredList() {
+    return events.filter((item) => item.name.includes(eventName));
+  }
 
   return (
     <View style={styles.container}>
@@ -17,7 +21,7 @@ export function BodyCardHome() {
           <Text style={styles.title}>Recomendações</Text>
           <FlatList
             data={recomendedEvents}
-            renderItem={({ item, index, separators }) => (
+            renderItem={({ item, index }) => (
               <RecommendationsCard event={item} />
             )}
             keyExtractor={(event) => event.id}
@@ -25,8 +29,8 @@ export function BodyCardHome() {
             horizontal
           />
         </View>
+        <Text style={styles.title}>Eventos</Text>
         <View style={styles.containerEvents}>
-          <Text style={styles.title}>Eventos</Text>
           <View style={styles.boxEvents}>
             {events.map((event, idx) => (
               <EventsCard event={event} key={event.id} />

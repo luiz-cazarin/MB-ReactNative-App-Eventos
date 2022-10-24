@@ -4,13 +4,13 @@ import { Background } from "../../components/Background";
 import { Text, View, Image } from "react-native";
 export function Profile() {
   return (
-    <SafeAreaView style={styles.container}>
-      {/* <Text>Perfil</Text>
+    <Background>
+      <SafeAreaView style={styles.container}>
+        <Text>Perfil</Text>
         <View>
           <Image
-            source={{
-              uri: "https://miro.medium.com/max/1400/1*g09N-jl7JtVjVZGcd-vL2g.jpeg",
-            }}
+            style={{ borderRadius: 150, marginVertical: 28 }}
+            source={require("../../assets/logo.png")}
           ></Image>
           <View>
             <Text>Luiz Claudio</Text>
@@ -19,7 +19,8 @@ export function Profile() {
         </View>
         <View>
           <Text>Minha conta</Text>
-        </View> */}
-    </SafeAreaView>
+        </View>
+      </SafeAreaView>
+    </Background>
   );
 }

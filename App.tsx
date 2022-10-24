@@ -1,4 +1,3 @@
-import "./src/services/notificationConfigs";
 import { StatusBar } from "expo-status-bar";
 import { Background } from "./src/components/Background";
 import {

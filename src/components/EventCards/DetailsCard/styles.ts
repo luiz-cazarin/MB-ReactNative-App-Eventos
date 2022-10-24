@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
   },
   banner: {
     height: 221,
-    backgroundColor: "#1f1f1f",
+    width: "100%"
   },
   bannerImg: {
     width: "100%",
@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     height: 170,
     padding: 15,
   },
-  title: {
+  name: {
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 20,

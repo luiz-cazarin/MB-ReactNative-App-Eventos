@@ -19,7 +19,19 @@ export const styles = StyleSheet.create({
   },
   boxButton: {
     height: 110,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  button: {
+    borderRadius: 10,
+    alignItems: "center",
     backgroundColor: "#6AD03A",
+    paddingVertical: 20,
+    width: 343,
+  },
+  text: {
+    color: "#ffff",
   },
   divisor: {
     height: 8,
