@@ -3,6 +3,19 @@
 ## React Native app
 
 ```
+npx expo whoami
+```
+
+if you have a account in expo.dev
+```
+npx expo login
+```
+if you don't have account
+```
+npx expo register
+```
+
+```
 npm install
 ```
 
