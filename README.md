@@ -1,5 +1,15 @@
-# NLW 2022 Web Reactnative
+# Gestao de Eventos
 
-#### Application developed in React Native, using the latest technologies on the market, along with Node backend and sqlite database
+## React Native app
 
-![nlw-apps](https://user-images.githubusercontent.com/57879201/191416845-987097f7-c6fb-4486-b00e-1f1447294d04.png)
+```
+npm install
+```
+
+
+```
+npm run dev
+```
+
+### Install expo on your device
+### Scan the QR code with your device
