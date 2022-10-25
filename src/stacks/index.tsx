@@ -5,6 +5,9 @@ import { Event } from "../../src/screens/Event";
 import { Register } from "../../src/screens/Register";
 import { OrderTickets } from "../screens/OrderTikets";
 import { OrderFinish } from "../screens/OrderFinish";
+import { UserProfile } from "../screens/UserProfile";
+import { UserEvents } from "../screens/UserEvents";
+import { CreateEvent } from "../screens/CreateEvent";
 
 function Tabs() {
   return <Routes />;
@@ -24,6 +27,9 @@ export function Stacks() {
       <Stack.Screen name="event" component={Event} />
       <Stack.Screen name="order-tikets" component={OrderTickets} />
       <Stack.Screen name="order-finish" component={OrderFinish} />
+      <Stack.Screen name="user-profile" component={UserProfile} />
+      <Stack.Screen name="user-events" component={UserEvents} />
+      <Stack.Screen name="create-event" component={CreateEvent} />
     </Stack.Navigator>
   );
 }
