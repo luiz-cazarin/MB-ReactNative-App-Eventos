@@ -7,7 +7,7 @@ import { Background } from "../../components/Background";
 import { EVENTS } from "../../utils/events";
 import { CardEvent } from "../../components/ListEvents/CardEvent";
 
-export function Tickets() {
+export function Tickets({ navigation }) {
   const [events, setEvents] = useState(EVENTS);
 
   return (

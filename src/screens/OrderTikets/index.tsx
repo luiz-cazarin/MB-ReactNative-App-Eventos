@@ -20,8 +20,9 @@ export function OrderTickets({ route }: any) {
 
   useEffect(() => {
     // axios.get...
-    let currTicket = dataBaseTikets.filter((item) => item.id === route.params.eventId);
-    setTicket(currTicket[0]);
+    let currTicket = dataBaseTikets.filter(
+      (item) => item.id === route.params.eventId
+    );
   }, []);
 
   function minusTicket() {
@@ -49,7 +50,7 @@ export function OrderTickets({ route }: any) {
           ></Icon>
           <Text
             onPress={() => {
-              navigation.navigate("home", {});
+              navigation.navigate("home");
             }}
           >
             Cancelar

@@ -8,28 +8,34 @@ import { OrderFinish } from "../screens/OrderFinish";
 import { UserProfile } from "../screens/UserProfile";
 import { UserEvents } from "../screens/UserEvents";
 import { CreateEvent } from "../screens/CreateEvent";
-
 function Tabs() {
   return <Routes />;
 }
 const Stack = createNativeStackNavigator();
-
-export function Stacks() {
+export function Stacks({ isSignedIn }: any) {
   return (
     <Stack.Navigator
+      initialRouteName="login"
       screenOptions={{
         headerShown: false,
       }}
     >
-      <Stack.Screen name="Main" component={Tabs} />
-      <Stack.Screen name="login" component={Login} />
-      <Stack.Screen name="register" component={Register} />
-      <Stack.Screen name="event" component={Event} />
-      <Stack.Screen name="order-tikets" component={OrderTickets} />
-      <Stack.Screen name="order-finish" component={OrderFinish} />
-      <Stack.Screen name="user-profile" component={UserProfile} />
-      <Stack.Screen name="user-events" component={UserEvents} />
-      <Stack.Screen name="create-event" component={CreateEvent} />
+      {isSignedIn ? (
+        <>
+          <Stack.Screen name="Main" component={Tabs} />
+          <Stack.Screen name="event" component={Event} />
+          <Stack.Screen name="order-tikets" component={OrderTickets} />
+          <Stack.Screen name="order-finish" component={OrderFinish} />
+          <Stack.Screen name="user-profile" component={UserProfile} />
+          <Stack.Screen name="user-events" component={UserEvents} />
+          <Stack.Screen name="create-event" component={CreateEvent} />
+        </>
+      ) : (
+        <>
+          <Stack.Screen name="login" component={Login} />
+          <Stack.Screen name="register" component={Register} />
+        </>
+      )}
     </Stack.Navigator>
   );
 }

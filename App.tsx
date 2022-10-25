@@ -21,7 +21,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar backgroundColor="transparent" translucent />
-      {fontsLoader ? <Stacks /> : <Loading />}
+      {fontsLoader ? <Stacks isSignedIn={true} /> : <Loading />}
     </NavigationContainer>
   );
 }

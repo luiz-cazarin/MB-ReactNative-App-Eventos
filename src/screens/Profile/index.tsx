@@ -2,9 +2,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
 import { Background } from "../../components/Background";
 import { Text, View, Image, Pressable } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-export function Profile() {
-  const navigation = useNavigation();
+export function Profile({ navigation }) {
   return (
     <Background>
       <SafeAreaView style={styles.container}>
@@ -40,7 +38,7 @@ export function Profile() {
             </Pressable>
             <Pressable
               style={styles.button}
-              onPress={() => navigation.navigate("create-event")}
+              onPress={() => navigation.navigate("create-event", { id: -1 })}
             >
               <Text>Criar evento</Text>
             </Pressable>
@@ -51,7 +49,12 @@ export function Profile() {
           </View>
         </View>
         <View style={styles.boxFooter}>
-          <Pressable style={styles.buttonExit}>
+          <Pressable
+            style={styles.buttonExit}
+            onPress={() => {
+              navigation.navigate("login");
+            }}
+          >
             <Text style={{ color: "#E74A4A" }}>Sair da conta</Text>
           </Pressable>
           <Text style={{ color: "#B0B0B0" }}>VERSÃO 1.0</Text>

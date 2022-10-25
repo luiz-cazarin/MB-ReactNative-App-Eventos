@@ -63,32 +63,26 @@ export function OrderFinish() {
           <View style={styles.boxUser}>
             <Text style={styles.subTitle}>Informação de pagamento</Text>
             <Text style={styles.boxUserTitle}>Numero do cartão *</Text>
-            <View style={styles.boxUserLabel}>
-              <TextInput
-                style={styles.paymentLabel}
-                keyboardType="numeric"
-                maxLength={12}
-                placeholder="____ ____ ____ ____"
-              />
-            </View>
+            <TextInput
+              style={styles.paymentLabel}
+              keyboardType="numeric"
+              maxLength={12}
+              placeholder="____ ____ ____ ____"
+            />
             <Text style={styles.boxUserTitle}>Data de expiração *</Text>
-            <View style={styles.boxUserLabel}>
-              <TextInput
-                style={styles.paymentLabel}
-                keyboardType="numeric"
-                maxLength={4}
-                placeholder="__/__"
-              />
-            </View>
+            <TextInput
+              style={styles.paymentLabel}
+              keyboardType="numeric"
+              maxLength={4}
+              placeholder="__/__"
+            />
             <Text style={styles.boxUserTitle}>Codigo de segurança *</Text>
-            <View style={styles.boxUserLabel}>
-              <TextInput
-                style={styles.paymentLabel}
-                keyboardType="numeric"
-                maxLength={3}
-                placeholder=""
-              />
-            </View>
+            <TextInput
+              style={styles.paymentLabel}
+              keyboardType="numeric"
+              maxLength={3}
+              placeholder=""
+            />
           </View>
           <View style={styles.boxTotalPrice}>
             <Text style={{ fontSize: 24 }}>Total</Text>
@@ -96,7 +90,7 @@ export function OrderFinish() {
           </View>
           <View style={styles.boxButton}>
             <TouchableOpacity style={styles.button}>
-              <Text style={styles.text}>FINALIZAR PAGAMENTO</Text>
+              <Text style={{ color: "#ffff" }}>FINALIZAR PAGAMENTO</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>

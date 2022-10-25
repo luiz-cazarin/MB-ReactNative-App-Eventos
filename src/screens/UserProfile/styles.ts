@@ -3,54 +3,57 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
   },
-  boxProfile: {
-    width: "100%",
+  header: {
+    height: 70,
     display: "flex",
     flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 20,
+  },
+  label: {
+    borderWidth: 2,
+    borderColor: "#EFEFEF",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    marginVertical: 10,
+    borderRadius: 5,
+  },
+  boxProfile: {
+    display: "flex",
     alignItems: "center",
   },
   profileImg: {
     borderRadius: 150,
     margin: 28,
-    height: 100,
-    width: 100,
+    height: 120,
+    width: 120,
   },
   title: {
-    paddingTop: 15,
-    textAlign: "center",
     fontSize: 18,
     fontWeight: "bold",
   },
-  subtitle: {
-    fontSize: 16,
-    fontWeight: "600",
-    paddingTop: 10,
-  },
-  boxOptions: {
-    padding: 5,
+  boxButton: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 50,
+    marginBottom: 100,
   },
   button: {
     marginVertical: 2,
     paddingVertical: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#D9D9D9",
-  },
-  boxFooter: {
-    alignItems: "center",
-    position: "absolute",
-    left: 30,
-    right: 30,
-    bottom: 30,
-  },
-  buttonExit: {
+    paddingHorizontal: 10,
     width: "100%",
-    marginBottom: 15,
-    alignItems: "center",
-    borderColor: "#D9D9D9",
-    paddingVertical: 20,
     borderWidth: 1,
+    borderColor: "#D9D9D9",
     borderRadius: 5,
+    marginBottom: 10,
+  },
+  text: {
+    paddingVertical: 10,
+    textAlign: "center",
+    fontWeight: "600",
   },
 });

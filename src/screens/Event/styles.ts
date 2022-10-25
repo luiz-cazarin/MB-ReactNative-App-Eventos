@@ -13,9 +13,9 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 20,
   },
-  organizer: {
-    height: 277,
-    backgroundColor: "#2f2f2f",
+  divisor: {
+    height: 8,
+    backgroundColor: "#EFEFEF",
   },
   boxButton: {
     height: 110,
@@ -30,11 +30,5 @@ export const styles = StyleSheet.create({
     paddingVertical: 20,
     width: 343,
   },
-  text: {
-    color: "#ffff",
-  },
-  divisor: {
-    height: 8,
-    backgroundColor: "#EFEFEF",
-  },
+  
 });

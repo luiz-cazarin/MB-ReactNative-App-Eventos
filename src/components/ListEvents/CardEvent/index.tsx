@@ -6,7 +6,21 @@ import { useNavigation } from "@react-navigation/native";
 export function CardEvent({ item }: any) {
   const navigation = useNavigation();
   return (
-    <Pressable onPress={() => navigation.navigate("event", { event: item })}>
+    <Pressable
+      onPress={() =>
+        navigation.navigate("event", {
+          id: item.id,
+          name: item.name,
+          local: item.local,
+          cep: item.cep,
+          initalDate: item.initalDate,
+          finalDate: item.finalDate,
+          img: item.img,
+          organizer: item.organizer,
+          description: item.description,
+        })
+      }
+    >
       <View style={styles.cardEvent}>
         <View style={styles.cardEventBanner}>
           <Image style={styles.banner} source={{ uri: item.img }} />

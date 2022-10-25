@@ -36,17 +36,17 @@ export const styles = StyleSheet.create({
     margin: 15,
     padding: 10,
   },
-  boxUserLabel: {
+  boxUserLabel: {},
+  paymentLabel: {
+    borderRadius: 5,
     borderWidth: 2,
     borderColor: "#EFEFEF",
-    padding: 10,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
     marginVertical: 10,
   },
   userLabel: {
     color: "#828282",
-  },
-  paymentLabel: {
-    color: "#181818",
   },
   boxUserTitle: {
     fontSize: 14,
@@ -72,8 +72,5 @@ export const styles = StyleSheet.create({
     backgroundColor: "#6AD03A",
     paddingVertical: 20,
     width: 343,
-  },
-  text: {
-    color: "#ffff",
   },
 });

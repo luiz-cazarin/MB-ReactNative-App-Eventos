@@ -5,6 +5,13 @@ export const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
   },
+  header: {
+    height: 70,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
   boxProfile: {
     width: "100%",
     display: "flex",
@@ -18,8 +25,6 @@ export const styles = StyleSheet.create({
     width: 100,
   },
   title: {
-    paddingTop: 15,
-    textAlign: "center",
     fontSize: 18,
     fontWeight: "bold",
   },

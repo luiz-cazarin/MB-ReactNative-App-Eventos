@@ -57,7 +57,7 @@ export function Event({ route }: any) {
                 })
               }
             >
-              <Text style={styles.text}>VER INGRESSOS</Text>
+              <Text style={{ color: "#ffff" }}>VER INGRESSOS</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>

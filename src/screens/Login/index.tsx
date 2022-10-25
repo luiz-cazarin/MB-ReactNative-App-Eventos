@@ -4,13 +4,22 @@ import { View, TextInput, Image, Pressable, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Background } from "../../components/Background";
 import { useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export function Login({ navigation }) {
   const [loginData, setLoginData] = useState({
     login: "",
     password: "",
   });
-  const makeLogin = () => {};
+
+  const makeLogin = async () => {
+    navigation.navigate("home", {});
+    try {
+      await AsyncStorage.setItem("@storage_Key", "1");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -32,10 +41,7 @@ export function Login({ navigation }) {
         />
       </View>
       <View style={styles.buttons}>
-        <Pressable
-          style={styles.buttonLogin}
-          onPress={() => navigation.navigate("home", {})}
-        >
+        <Pressable style={styles.buttonLogin} onPress={makeLogin}>
           <Text style={styles.loginText}>Login</Text>
         </Pressable>
         <Pressable
