@@ -1,8 +1,9 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
-import { Background } from "../../components/Background";
+import { Background } from "../../../components/Background";
 import { Text, View, Image, Pressable } from "react-native";
-export function Profile({ navigation }) {
+import { Button } from "../../../components/layout/Button";
+export function Profile({ navigation }: any) {
   return (
     <Background>
       <SafeAreaView style={styles.container}>
@@ -11,7 +12,7 @@ export function Profile({ navigation }) {
           <View style={styles.boxProfile}>
             <Image
               style={styles.profileImg}
-              source={require("../../assets/logo.png")}
+              source={require("../../../assets/logo.png")}
             />
             <View>
               <Text style={{ fontWeight: "600", fontSize: 18 }}>
@@ -38,7 +39,7 @@ export function Profile({ navigation }) {
             </Pressable>
             <Pressable
               style={styles.button}
-              onPress={() => navigation.navigate("create-event", { id: -1 })}
+              onPress={() => navigation.navigate("create-event", { id: null })}
             >
               <Text>Criar evento</Text>
             </Pressable>
@@ -49,14 +50,14 @@ export function Profile({ navigation }) {
           </View>
         </View>
         <View style={styles.boxFooter}>
-          <Pressable
-            style={styles.buttonExit}
-            onPress={() => {
+          <Button
+            text="Sair da conta"
+            color="#ff0000"
+            backgroundColor="#F8F8F8"
+            event={() => {
               navigation.navigate("login");
             }}
-          >
-            <Text style={{ color: "#E74A4A" }}>Sair da conta</Text>
-          </Pressable>
+          ></Button>
           <Text style={{ color: "#B0B0B0" }}>VERSÃO 1.0</Text>
           <Text style={{ color: "#B0B0B0" }}>
             Desenvolvido por: Luiz Claudio

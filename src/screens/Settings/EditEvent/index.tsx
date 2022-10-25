@@ -1,9 +1,9 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
-import { Background } from "../../components/Background";
+import { Background } from "../../../components/Background";
 import { Text, View, Image, Pressable } from "react-native";
 import { useState, useEffect } from "react";
-export function CreateEvent({ route }: any) {
+export function EditEvent({ route }: any) {
   const [type, setType] = useState(false);
   useEffect(() => {
     if (route.params.id === -1) {
@@ -17,7 +17,7 @@ export function CreateEvent({ route }: any) {
     <Background>
       <SafeAreaView style={styles.container}>
         <View>
-          <Text style={styles.title}>{type ? "Criar" : "Editar"} Evento</Text>
+          <Text style={styles.title}>Editar Evento</Text>
         </View>
       </SafeAreaView>
     </Background>

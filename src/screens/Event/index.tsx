@@ -9,30 +9,22 @@ import { ScrollView, Text, View, TouchableOpacity } from "react-native";
 import { useState } from "react";
 import { OrganizerCard } from "../../components/EventCards/OrganizerCard";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import { useNavigation } from "@react-navigation/native";
+import { Button } from "../../components/layout/Button";
+import { Header } from "../../components/layout/Header";
 
-export function Event({ route }: any) {
-  const navigation = useNavigation();
+export function Event({ route, navigation }: any) {
   function addFavoriteEvent() {}
   return (
     <Background>
       <SafeAreaView style={styles.container}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={styles.header}>
-            <Icon
-              name="arrow-back-ios"
-              size={22}
-              onPress={() => {
-                navigation.navigate("home");
-              }}
-            ></Icon>
-            <Text>Evento</Text>
-            <Icon
-              name="favorite-outline"
-              size={28}
-              onPress={addFavoriteEvent}
-            ></Icon>
-          </View>
+          <Header
+            iconLeft="arrow-back-ios"
+            eventLeft={() => navigation.goBack()}
+            title="Evento"
+            iconRight="favorite-outline"
+            eventRight={() => console.log("Evento favoritado")}
+          />
           <DetailsCard
             name={route.params.name}
             local={route.params.local}
@@ -49,16 +41,19 @@ export function Event({ route }: any) {
             avatar={route.params.organizer.avatar}
           />
           <View style={styles.boxButton}>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() =>
+            <Button
+              text="VER INGRESSOS"
+              color="#ffff"
+              backgroundColor="#6AD03A"
+              event={() =>
                 navigation.navigate("order-tikets", {
                   eventId: route.params.id,
+                  name: route.params.name,
+                  price: route.params.price,
+                  initialDate: route.params.initalDate,
                 })
               }
-            >
-              <Text style={{ color: "#ffff" }}>VER INGRESSOS</Text>
-            </TouchableOpacity>
+            />
           </View>
         </ScrollView>
       </SafeAreaView>

@@ -10,11 +10,12 @@ import {
 import { Background } from "../../components/Background";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import Icon2 from "react-native-vector-icons/AntDesign";
-import { useNavigation } from "@react-navigation/native";
 import { useState, useEffect } from "react";
+import { Button } from "../../components/layout/Button";
+import { Header } from "../../components/layout/Header";
+import { TextLabel } from "../../components/layout/TextLabel";
 
-export function OrderFinish() {
-  const navigation = useNavigation();
+export function OrderFinish({ navigation }: any) {
   const [user, setUser] = useState({
     id: 1,
     name: "Luiz Claudio Cazarin",
@@ -29,35 +30,21 @@ export function OrderFinish() {
     <Background>
       <SafeAreaView style={styles.container}>
         <ScrollView>
-          <View style={styles.header}>
-            <Icon
-              name="arrow-back-ios"
-              size={22}
-              onPress={() => {
-                navigation.goBack();
-              }}
-            ></Icon>
-            <Text
-              onPress={() => {
-                navigation.navigate("home", {});
-              }}
-            >
-              Cancelar
-            </Text>
-          </View>
-          <View style={styles.headerTitle}>
+          <Header
+            iconLeft="arrow-back-ios"
+            eventLeft={() => navigation.goBack()}
+            title=""
+            textRight="Cancelar"
+            eventRight={() => navigation.navigate("home")}
+          />
+          <View style={{ paddingBottom: 20, paddingHorizontal: 20 }}>
             <Text style={styles.title}>Finalizar compra</Text>
           </View>
+          <View style={styles.divisor} />
           <View style={styles.boxUser}>
             <Text style={styles.subTitle}>Informações do participante</Text>
-            <Text style={styles.boxUserTitle}>Nome</Text>
-            <View style={styles.boxUserLabel}>
-              <Text style={styles.userLabel}>{user.name}</Text>
-            </View>
-            <Text style={styles.boxUserTitle}>E-mail</Text>
-            <View style={styles.boxUserLabel}>
-              <Text style={styles.userLabel}>{user.email}</Text>
-            </View>
+            <TextLabel title="Nome" text={user.name} />
+            <TextLabel title="Email" text={user.email} />
           </View>
           <View style={styles.divisor} />
           <View style={styles.boxUser}>
@@ -89,9 +76,12 @@ export function OrderFinish() {
             <Text style={{ fontSize: 24 }}>R$ 60,00</Text>
           </View>
           <View style={styles.boxButton}>
-            <TouchableOpacity style={styles.button}>
-              <Text style={{ color: "#ffff" }}>FINALIZAR PAGAMENTO</Text>
-            </TouchableOpacity>
+            <Button
+              text="FINALIZAR PAGAMENTO"
+              color="#ffff"
+              backgroundColor="#6AD03A"
+              event={() => console.log("comprou!")}
+            />
           </View>
         </ScrollView>
       </SafeAreaView>

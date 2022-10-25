@@ -7,7 +7,7 @@ import { Background } from "../../components/Background";
 import { EVENTS } from "../../utils/events";
 import { CardEvent } from "../../components/ListEvents/CardEvent";
 
-export function Tickets({ navigation }) {
+export function Tickets({ navigation }: any) {
   const [events, setEvents] = useState(EVENTS);
 
   return (
@@ -19,7 +19,9 @@ export function Tickets({ navigation }) {
           <FlatList
             data={events}
             showsVerticalScrollIndicator={false}
-            renderItem={({ item, index }) => <CardEvent item={item} />}
+            renderItem={({ item, index }) => (
+              <CardEvent navigation={navigation} item={item} />
+            )}
           />
         </View>
         <Text style={styles.subtitle}>Encerrados</Text>
@@ -27,7 +29,9 @@ export function Tickets({ navigation }) {
           <FlatList
             data={events}
             showsVerticalScrollIndicator={false}
-            renderItem={({ item, index }) => <CardEvent item={item} />}
+            renderItem={({ item, index }) => (
+              <CardEvent navigation={navigation} item={item} />
+            )}
           />
         </View>
       </SafeAreaView>

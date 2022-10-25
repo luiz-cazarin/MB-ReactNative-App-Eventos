@@ -1,10 +1,8 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
 import { Text, View, Image, Pressable } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
-export function CardEvent({ item }: any) {
-  const navigation = useNavigation();
+export function CardEvent({ item, navigation }: any) {
   return (
     <Pressable
       onPress={() =>
@@ -13,6 +11,7 @@ export function CardEvent({ item }: any) {
           name: item.name,
           local: item.local,
           cep: item.cep,
+          price: item.price,
           initalDate: item.initalDate,
           finalDate: item.finalDate,
           img: item.img,

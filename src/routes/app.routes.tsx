@@ -1,7 +1,7 @@
 import { Home } from "../screens/Home";
 import { Favorite } from "../screens/Favorite";
 import { Tickets } from "../screens/Tickets";
-import { Profile } from "../screens/Profile";
+import { Profile } from "../screens/Settings/Profile";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { IconButton } from "react-native-paper";
 

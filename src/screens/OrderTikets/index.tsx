@@ -4,11 +4,12 @@ import { Text, View, TouchableOpacity } from "react-native";
 import { Background } from "../../components/Background";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import Icon2 from "react-native-vector-icons/AntDesign";
-import { useNavigation } from "@react-navigation/native";
 import { useState, useEffect } from "react";
 import { EVENTS } from "../../utils/events";
+import { Button } from "../../components/layout/Button";
+import { Header } from "../../components/layout/Header";
 
-export function OrderTickets({ route }: any) {
+export function OrderTickets({ route, navigation }: any) {
   const [dataBaseTikets, setDataBaseTikets] = useState(EVENTS);
   const [ticket, setTicket] = useState({
     name: "",
@@ -16,7 +17,6 @@ export function OrderTickets({ route }: any) {
     price: "",
   });
   const [amountTicket, setAmountTicket] = useState(0);
-  const navigation = useNavigation();
 
   useEffect(() => {
     // axios.get...
@@ -40,57 +40,54 @@ export function OrderTickets({ route }: any) {
   return (
     <Background>
       <SafeAreaView style={styles.container}>
-        <View style={styles.header}>
-          <Icon
-            name="arrow-back-ios"
-            size={22}
-            onPress={() => {
-              navigation.goBack();
-            }}
-          ></Icon>
-          <Text
-            onPress={() => {
-              navigation.navigate("home");
-            }}
-          >
-            Cancelar
-          </Text>
-        </View>
+        <Header
+          iconLeft="arrow-back-ios"
+          eventLeft={() => navigation.goBack()}
+          title=""
+          textRight="Cancelar"
+          eventRight={() => console.log(navigation.navigate("home"))}
+        />
         <View style={styles.headerPrice}>
           <Text style={styles.title}>Ingressos</Text>
-          <Text style={styles.totalPrice}>R$ 30,00</Text>
+          <Text style={styles.totalPrice}>
+            R$ {route.params.price.toFixed(2)}
+          </Text>
         </View>
-        <View style={styles.boxTicket}>
-          <View style={styles.boxDescriptions}>
-            <Text style={styles.nameTicket}>Tiket: {ticket.name}</Text>
-            <Text>Vendas até {ticket.initalDate.toString()}</Text>
-            <Text style={styles.count}>
-              <Icon2
-                name="minuscircleo"
-                size={24}
-                color="#3473EF"
-                onPress={minusTicket}
-              />
-              <Text style={{ fontSize: 22 }}> {amountTicket} </Text>
-              <Icon2
-                name="pluscircleo"
-                size={24}
-                color="#3473EF"
-                onPress={plusTicket}
-              />
-            </Text>
-          </View>
-          <View>
-            <Text style={styles.ticketPrice}>R$ {ticket.price}</Text>
+        <View style={styles.box}>
+          <View style={styles.boxTicket}>
+            <View>
+              <Text style={styles.nameTicket}>Tiket: {route.params.name}</Text>
+              <Text>Vendas até {route.params.initialDate.toString()}</Text>
+              <Text style={styles.count}>
+                <Icon2
+                  name="minuscircleo"
+                  size={24}
+                  color="#3473EF"
+                  onPress={minusTicket}
+                />
+                <Text style={{ fontSize: 22 }}> {amountTicket} </Text>
+                <Icon2
+                  name="pluscircleo"
+                  size={24}
+                  color="#3473EF"
+                  onPress={plusTicket}
+                />
+              </Text>
+            </View>
+            <View>
+              <Text style={styles.ticketPrice}>
+                R$ {route.params.price.toFixed(2)}
+              </Text>
+            </View>
           </View>
         </View>
-        <View style={styles.boxButton}>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate("order-finish")}
-          >
-            <Text style={styles.text}>COMPRAR INGRESSO</Text>
-          </TouchableOpacity>
+        <View style={styles.buttonPosition}>
+          <Button
+            text="COMPRAR INGRESSO"
+            color="#ffff"
+            backgroundColor="#6AD03A"
+            event={() => navigation.navigate("order-finish")}
+          />
         </View>
       </SafeAreaView>
     </Background>

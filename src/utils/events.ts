@@ -5,7 +5,7 @@ export const EVENTS = [
     description:
       "Descricao generica do evento - 1 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
     category: "empresa",
-    price: 31.0,
+    price: 31.5,
     local: "UCB auditório - 1",
     cep: "72850120",
     initalDate: new Date("August 1, 17:00").toLocaleDateString(undefined, {

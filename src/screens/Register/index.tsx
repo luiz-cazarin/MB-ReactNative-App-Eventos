@@ -7,94 +7,46 @@ import {
   View,
   Image,
   TouchableOpacity,
-  TextInput,
   ScrollView,
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Background } from "../../components/Background";
 import { Checkbox } from "react-native-paper";
+import { Header } from "../../components/layout/Header";
+import { Button } from "../../components/layout/Button";
+import { TextLabel } from "../../components/layout/TextLabel";
+import { InputLabel } from "../../components/layout/InputLabel";
 
-export function Register({ navigation }) {
+export function Register({ navigation }: any) {
   const [status, setStatus] = useState("unchecked");
   return (
     <Background>
       <SafeAreaView style={styles.container}>
-        <View style={styles.header}>
-          <Icon
-            name="arrow-back-ios"
-            size={22}
-            onPress={() => {
-              navigation.goBack();
-            }}
-          ></Icon>
-          <Text style={styles.title}>Cadastro</Text>
-          <View style={{ width: 20 }} />
-        </View>
-        <View style={{ padding: 30 }}>
-          <TextInput
-            style={{
-              borderWidth: 1,
-              borderColor: "#F0F0F0",
-              padding: 10,
-              borderRadius: 5,
-              marginTop: 20,
-            }}
-            placeholder="Nome completo"
-          />
-          <TextInput
-            style={{
-              borderWidth: 1,
-              borderColor: "#F0F0F0",
-              padding: 10,
-              borderRadius: 5,
-              marginTop: 20,
-            }}
-            placeholder="Email"
-          />
-          <TextInput
-            style={{
-              borderWidth: 1,
-              borderColor: "#F0F0F0",
-              padding: 10,
-              borderRadius: 5,
-              marginTop: 20,
-            }}
-            placeholder="Senha"
-          />
-          <TextInput
-            style={{
-              borderWidth: 1,
-              borderColor: "#F0F0F0",
-              padding: 10,
-              borderRadius: 5,
-              marginTop: 20,
-            }}
-            placeholder="CPF"
-          />
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
-            <Checkbox
-              color="#F0F0F0"
-              uncheckedColor="#F0F0F0"
-              status="unchecked"
-            />
-            <Text>
-              Accept all
-              <Text style={{ color: "#3DA6E1", fontWeight: "600" }}>
-                {" "}
-                terms & services
-              </Text>
+        <Header
+          iconLeft="arrow-back-ios"
+          eventLeft={() => navigation.goBack()}
+          title="Cadastro"
+          textRight="    "
+        />
+        <View style={{ padding: 20 }}>
+          <View style={{ paddingBottom: 20 }}>
+            <Text style={{ fontSize: 20, fontWeight: "bold" }}>SignUp</Text>
+            <Text style={{ color: "#A5A5A5", fontWeight: "600" }}>
+              Informe os seus dados
             </Text>
           </View>
-          <Pressable style={styles.button}>
-            <Text style={styles.textButton}>CRIAR CONTA</Text>
-          </Pressable>
+          <InputLabel title="Nome" />
+          <InputLabel title="E-mail" />
+          <InputLabel title="Senha" />
+          <InputLabel title="CPF" />
+          <InputLabel title="Tipo de conta" />
+          <Button
+            text="CRIAR CONTA"
+            color="#ffff"
+            backgroundColor="#404040"
+            event={() => console.log("cadastrar")}
+          />
         </View>
       </SafeAreaView>
     </Background>

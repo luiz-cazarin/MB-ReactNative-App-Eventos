@@ -12,9 +12,10 @@ export interface Props {
     finalDate: string;
     img: string;
   };
+  navigation: any;
 }
 
-export function RecommendationsCard({ event }: Props) {
+export function RecommendationsCard({ event, navigation }: Props) {
   return (
     <View style={styles.container}>
       <Image

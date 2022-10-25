@@ -13,7 +13,7 @@ export function Login({ navigation }) {
   });
 
   const makeLogin = async () => {
-    navigation.navigate("home", {});
+    navigation.navigate("Main", {});
     try {
       await AsyncStorage.setItem("@storage_Key", "1");
     } catch (error) {

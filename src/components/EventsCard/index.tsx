@@ -1,15 +1,14 @@
 import { View, Text, Image, Pressable } from "react-native";
 import { styles } from "./styles";
-import { useNavigation } from "@react-navigation/native";
 
-export function EventsCard({ event }: any) {
-  const navigation = useNavigation();
+export function EventsCard({ event, navigation }: any) {
   return (
     <Pressable
       onPress={() =>
         navigation.navigate("event", {
           id: event.id,
           name: event.name,
+          price: event.price,
           local: event.local,
           cep: event.cep,
           initalDate: event.initalDate,

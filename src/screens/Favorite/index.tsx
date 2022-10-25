@@ -6,7 +6,7 @@ import { useState } from "react";
 import { CardEvent } from "../../components/ListEvents/CardEvent";
 import { EVENTS } from "../../utils/events";
 
-export function Favorite() {
+export function Favorite({ navigation }: any) {
   const [events, setEvents] = useState(EVENTS);
   return (
     <Background>
@@ -17,7 +17,9 @@ export function Favorite() {
           <FlatList
             data={events}
             showsVerticalScrollIndicator={false}
-            renderItem={({ item, index }) => <CardEvent item={item} />}
+            renderItem={({ item, index }) => (
+              <CardEvent navigation={navigation} item={item} />
+            )}
           />
         </View>
       </SafeAreaView>

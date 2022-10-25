@@ -5,13 +5,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
   },
-  header: {
-    height: 70,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
   boxProfile: {
     width: "100%",
     display: "flex",
@@ -25,6 +18,8 @@ export const styles = StyleSheet.create({
     width: 100,
   },
   title: {
+    paddingTop: 15,
+    textAlign: "center",
     fontSize: 18,
     fontWeight: "bold",
   },
@@ -37,7 +32,7 @@ export const styles = StyleSheet.create({
     padding: 5,
   },
   button: {
-    marginVertical: 2,
+    marginVertical: 5,
     paddingVertical: 10,
     borderBottomWidth: 1,
     borderBottomColor: "#D9D9D9",
@@ -48,14 +43,5 @@ export const styles = StyleSheet.create({
     left: 30,
     right: 30,
     bottom: 30,
-  },
-  buttonExit: {
-    width: "100%",
-    marginBottom: 15,
-    alignItems: "center",
-    borderColor: "#D9D9D9",
-    paddingVertical: 20,
-    borderWidth: 1,
-    borderRadius: 5,
   },
 });
