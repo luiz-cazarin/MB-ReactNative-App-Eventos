@@ -1,21 +1,15 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
-import { Text, View, TouchableOpacity } from "react-native";
-import { Background } from "../../components/Background";
-import Icon from "react-native-vector-icons/MaterialIcons";
+import { Text, View } from "react-native";
+import { Background } from "../../../components/Background";
 import Icon2 from "react-native-vector-icons/AntDesign";
 import { useState, useEffect } from "react";
-import { EVENTS } from "../../utils/events";
-import { Button } from "../../components/layout/Button";
-import { Header } from "../../components/layout/Header";
+import { EVENTS } from "../../../utils/events";
+import { Button } from "../../../components/layout/Button";
+import { Header } from "../../../components/layout/Header";
 
 export function OrderTickets({ route, navigation }: any) {
   const [dataBaseTikets, setDataBaseTikets] = useState(EVENTS);
-  const [ticket, setTicket] = useState({
-    name: "",
-    initalDate: "",
-    price: "",
-  });
   const [amountTicket, setAmountTicket] = useState(0);
 
   useEffect(() => {
@@ -43,7 +37,6 @@ export function OrderTickets({ route, navigation }: any) {
         <Header
           iconLeft="arrow-back-ios"
           eventLeft={() => navigation.goBack()}
-          title=""
           textRight="Cancelar"
           eventRight={() => console.log(navigation.navigate("home"))}
         />

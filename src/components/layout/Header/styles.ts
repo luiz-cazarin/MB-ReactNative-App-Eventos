@@ -1,3 +1,4 @@
+import { Center } from "native-base";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -8,8 +9,20 @@ export const styles = StyleSheet.create({
     height: 70,
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 20,
+  },
+  iconLeft: {
+    position: "absolute",
+    left: 20,
+  },
+  iconRight: {
+    position: "absolute",
+    right: 20,
+  },
+  title: {
+    textAlign: "center",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });

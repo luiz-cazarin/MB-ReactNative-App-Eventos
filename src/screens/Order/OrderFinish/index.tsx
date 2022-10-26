@@ -4,16 +4,13 @@ import {
   Text,
   TextInput,
   View,
-  TouchableOpacity,
   ScrollView,
 } from "react-native";
-import { Background } from "../../components/Background";
-import Icon from "react-native-vector-icons/MaterialIcons";
-import Icon2 from "react-native-vector-icons/AntDesign";
+import { Background } from "../../../components/Background";
 import { useState, useEffect } from "react";
-import { Button } from "../../components/layout/Button";
-import { Header } from "../../components/layout/Header";
-import { TextLabel } from "../../components/layout/TextLabel";
+import { Button } from "../../../components/layout/Button";
+import { Header } from "../../../components/layout/Header";
+import { TextLabel } from "../../../components/layout/TextLabel";
 
 export function OrderFinish({ navigation }: any) {
   const [user, setUser] = useState({
@@ -33,7 +30,6 @@ export function OrderFinish({ navigation }: any) {
           <Header
             iconLeft="arrow-back-ios"
             eventLeft={() => navigation.goBack()}
-            title=""
             textRight="Cancelar"
             eventRight={() => navigation.navigate("home")}
           />

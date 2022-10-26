@@ -2,7 +2,6 @@ import * as React from "react";
 import { styles } from "./styles";
 import { View, TextInput, Image, Pressable, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Background } from "../../components/Background";
 import { useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 

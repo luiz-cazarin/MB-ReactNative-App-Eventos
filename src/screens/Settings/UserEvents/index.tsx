@@ -14,7 +14,6 @@ export function UserEvents({ navigation }: any) {
           iconLeft="arrow-back-ios"
           eventLeft={() => navigation.goBack()}
           title="Meus eventos"
-          textRight="   "
         />
         <FlatList
           data={EVENTS}

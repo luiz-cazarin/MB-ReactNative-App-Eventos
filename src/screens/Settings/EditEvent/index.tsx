@@ -1,7 +1,7 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
 import { Background } from "../../../components/Background";
-import { Text, View, Image, Pressable } from "react-native";
+import { Text, View } from "react-native";
 import { useState, useEffect } from "react";
 export function EditEvent({ route }: any) {
   const [type, setType] = useState(false);

@@ -1,19 +1,16 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
-import { Background } from "../../components/Background";
+import { Background } from "../../../components/Background";
 
-import { DetailsCard } from "../../components/EventCards/DetailsCard";
-import { DescriptionCard } from "../../components/EventCards/DescriptionCard";
+import { DetailsCard } from "../../../components/EventCards/DetailsCard";
+import { DescriptionCard } from "../../../components/EventCards/DescriptionCard";
 
-import { ScrollView, Text, View, TouchableOpacity } from "react-native";
-import { useState } from "react";
-import { OrganizerCard } from "../../components/EventCards/OrganizerCard";
-import Icon from "react-native-vector-icons/MaterialIcons";
-import { Button } from "../../components/layout/Button";
-import { Header } from "../../components/layout/Header";
+import { ScrollView, View } from "react-native";
+import { OrganizerCard } from "../../../components/EventCards/OrganizerCard";
+import { Button } from "../../../components/layout/Button";
+import { Header } from "../../../components/layout/Header";
 
 export function Event({ route, navigation }: any) {
-  function addFavoriteEvent() {}
   return (
     <Background>
       <SafeAreaView style={styles.container}>

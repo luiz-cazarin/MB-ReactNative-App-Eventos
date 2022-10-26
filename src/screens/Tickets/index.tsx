@@ -1,7 +1,7 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
 
-import { ScrollView, Text, View, Image, FlatList } from "react-native";
+import { Text, View, FlatList } from "react-native";
 import { useState } from "react";
 import { Background } from "../../components/Background";
 import { EVENTS } from "../../utils/events";

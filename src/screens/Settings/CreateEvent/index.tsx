@@ -1,7 +1,7 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
 import { Background } from "../../../components/Background";
-import { Text, View, ScrollView } from "react-native";
+import { View, ScrollView } from "react-native";
 import { Button } from "../../../components/layout/Button";
 import { Header } from "../../../components/layout/Header";
 import { InputArea } from "../../../components/layout/InputArea";
@@ -14,7 +14,6 @@ export function CreateEvent({ route, navigation }: any) {
           iconLeft="arrow-back-ios"
           eventLeft={() => navigation.goBack()}
           title="Criar Evento"
-          textRight="     "
         />
         <ScrollView>
           <View style={styles.box}>

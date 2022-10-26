@@ -16,21 +16,23 @@ export function Header({
     <View style={styles.container}>
       <View style={styles.header}>
         <Icon
+          style={styles.iconLeft}
           color={leftColor}
           name={iconLeft}
           size={22}
           onPress={eventLeft}
         ></Icon>
-        <Text style={{ fontWeight: "bold" }}>{title}</Text>
+        <Text style={styles.title}>{title}</Text>
         {iconRight ? (
           <Icon
+            style={styles.iconRight}
             color={rightColor}
             name={iconRight}
             size={24}
             onPress={eventRight}
           />
         ) : (
-          <Text onPress={eventRight}>{textRight}</Text>
+          <Text style={styles.iconRight} onPress={eventRight}>{textRight}</Text>
         )}
       </View>
     </View>

@@ -9,10 +9,6 @@ export function BodyCardHome({ eventName, navigation }: any) {
   const [recomendedEvents, setRecomendedEvents] = useState(EVENTS);
   const [events, setEvents] = useState(EVENTS);
 
-  function filteredList() {
-    return events.filter((item) => item.name.includes(eventName));
-  }
-
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>

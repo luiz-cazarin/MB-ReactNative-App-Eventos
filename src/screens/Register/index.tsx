@@ -1,25 +1,16 @@
 import * as React from "react";
 import { styles } from "./styles";
-import { useState } from "react";
 import {
-  Pressable,
   Text,
   View,
-  Image,
-  TouchableOpacity,
-  ScrollView,
 } from "react-native";
-import Icon from "react-native-vector-icons/MaterialIcons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Background } from "../../components/Background";
-import { Checkbox } from "react-native-paper";
 import { Header } from "../../components/layout/Header";
 import { Button } from "../../components/layout/Button";
-import { TextLabel } from "../../components/layout/TextLabel";
 import { InputArea } from "../../components/layout/InputArea";
 
 export function Register({ navigation }: any) {
-  const [status, setStatus] = useState("unchecked");
   return (
     <Background>
       <SafeAreaView style={styles.container}>
@@ -27,7 +18,6 @@ export function Register({ navigation }: any) {
           iconLeft="arrow-back-ios"
           eventLeft={() => navigation.goBack()}
           title="Cadastro"
-          textRight="    "
         />
         <View style={{ padding: 20 }}>
           <View style={{ paddingBottom: 20 }}>

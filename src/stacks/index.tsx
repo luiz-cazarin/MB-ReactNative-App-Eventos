@@ -1,10 +1,10 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Routes } from "../../src/routes";
 import { Login } from "../../src/screens/Login";
-import { Event } from "../../src/screens/Event";
 import { Register } from "../../src/screens/Register";
-import { OrderTickets } from "../screens/OrderTikets";
-import { OrderFinish } from "../screens/OrderFinish";
+import { Event } from "../screens/Order/Event";
+import { OrderTickets } from "../screens/Order/OrderTikets";
+import { OrderFinish } from "../screens/Order/OrderFinish";
 import { UserProfile } from "../screens/Settings/UserProfile";
 import { UserEvents } from "../screens/Settings/UserEvents";
 import { CreateEvent } from "../screens/Settings/CreateEvent";
