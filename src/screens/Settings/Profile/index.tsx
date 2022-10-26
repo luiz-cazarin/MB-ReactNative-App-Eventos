@@ -10,7 +10,7 @@ export function Profile({ navigation }: any) {
   const [users, setUsers] = useState(USERS);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [avatar, setAvatar] = useState("");
+  const [avatar, setAvatar] = useState("https://www.w3schools.com/howto/img_avatar.png");
   useEffect(() => {
     // simulate get User auth
     let user = users.find((user) => user.id === "1");
@@ -28,7 +28,7 @@ export function Profile({ navigation }: any) {
         <View>
           <Text style={styles.title}>Perfil</Text>
           <View style={styles.boxProfile}>
-            <Image style={styles.profileImg} source={{ uri: avatar }} />
+            <Image style={styles.profileImg} source={{ uri: `${avatar}` }} />
             <View>
               <Text style={{ fontWeight: "600", fontSize: 18 }}>{name}</Text>
               <Text style={{ color: "#2C2C2C", fontSize: 13 }}>{email}</Text>

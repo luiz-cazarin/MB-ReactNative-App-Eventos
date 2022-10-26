@@ -13,7 +13,7 @@ import { ToggleButton } from "react-native-paper";
 export function Register({ navigation }: any) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [avatar, setAvatar] = useState("");
+  const [avatar, setAvatar] = useState("https://www.w3schools.com/howto/img_avatar.png");
   const [password, setPassword] = useState("");
   const [cpf, setCpf] = useState("");
   const [type, setType] = useState("");

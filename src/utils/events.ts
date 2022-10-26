@@ -19,7 +19,7 @@ export const EVENTS = [
     img: "https://blog.milvus.com.br/wp-content/uploads/conheca-os-6-principais-eventos-de-ti-11.png",
     organizer: {
       id: "1",
-      name: "DF Eventos",
+      name: "GO Eventos",
       avatar:
         "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80",
       email: "dfEventos@gmail.com",
@@ -45,9 +45,8 @@ export const EVENTS = [
     img: "http://auditeste.com.br/wp-content/uploads/2020/01/eventos_ti.jpg",
     organizer: {
       id: "2",
-      name: "DF Eventos",
-      avatar:
-        "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80",
+      name: "SP Eventos",
+      avatar: "https://www.w3schools.com/howto/img_avatar.png",
       email: "dfEventos@gmail.com",
     },
   },
@@ -71,7 +70,7 @@ export const EVENTS = [
     img: "https://s2.glbimg.com/O_z6ddxuZ6xA28LMpr1-mPMbDY0=/620x300/e.glbimg.com/og/ed/f/original/2022/01/11/rio-innovation-week-1.jpg",
     organizer: {
       id: "3",
-      name: "DF Eventos",
+      name: "PR Eventos",
       avatar:
         "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80",
       email: "dfEventos@gmail.com",
@@ -97,7 +96,7 @@ export const EVENTS = [
     img: "https://blog.even3.com.br/wp-content/uploads/2022/05/17-imagens-de-destaque_guia-de-planejamento-de-eventos.png",
     organizer: {
       id: "4",
-      name: "DF Eventos",
+      name: "GO Eventos",
       avatar:
         "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80",
       email: "dfEventos@gmail.com",
@@ -123,7 +122,7 @@ export const EVENTS = [
     img: "https://www.andrecelestino.com/wp-content/uploads/2019/02/db1-calendario-eventos-ti-2019.jpg",
     organizer: {
       id: "5",
-      name: "DF Eventos",
+      name: "GO Eventos",
       avatar:
         "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80",
       email: "dfEventos@gmail.com",

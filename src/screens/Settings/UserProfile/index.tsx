@@ -16,7 +16,7 @@ export function UserProfile({ navigation }: any) {
   const [password, setPassword] = useState("");
   const [cpf, setCpf] = useState("");
   const [type, setType] = useState("Cliente");
-  const [avatar, setAvatar] = useState("");
+  const [avatar, setAvatar] = useState("https://www.w3schools.com/howto/img_avatar.png");
 
   const [editable, setEditable] = useState(false);
   const [color, setColor] = useState("false");

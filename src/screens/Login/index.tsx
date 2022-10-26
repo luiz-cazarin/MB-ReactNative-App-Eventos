@@ -20,7 +20,7 @@ export function Login({ navigation }: any) {
         user.password === password
     );
     if (!user) {
-      navigation.navigate("Main", {});
+      navigation.navigate("Main");
     } else {
       console.log("Error!");
     }
