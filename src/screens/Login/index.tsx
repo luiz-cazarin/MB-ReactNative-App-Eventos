@@ -6,7 +6,7 @@ import { Background } from "../../components/Background";
 import { useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export function Login({ navigation }) {
+export function Login({ navigation }: any) {
   const [loginData, setLoginData] = useState({
     login: "",
     password: "",
@@ -24,20 +24,22 @@ export function Login({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.logo}>
-        <Image source={require("../../assets/logo.png")}></Image>
+        <Image
+          style={{ height: 220, width: 220 }}
+          source={require("../../assets/logo-mb.png")}
+        ></Image>
       </View>
-      <View style={styles.inputData}>
+      <View>
         <TextInput
-          style={styles.emailField}
+          style={styles.input}
           value={loginData.login}
           placeholder="Email"
           keyboardType="email-address"
         />
         <TextInput
-          style={styles.passwordField}
-          value={loginData.login}
+          style={styles.input}
+          value={loginData.password}
           placeholder="Password"
-          keyboardType="email-address"
         />
       </View>
       <View style={styles.buttons}>

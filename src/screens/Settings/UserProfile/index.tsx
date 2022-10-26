@@ -13,7 +13,7 @@ import {
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { Button } from "../../../components/layout/Button";
 import { Header } from "../../../components/layout/Header";
-import { InputLabel } from "../../../components/layout/InputLabel";
+import { InputArea } from "../../../components/layout/InputArea";
 import { useEffect, useState } from "react";
 export function UserProfile({ navigation }: any) {
   const [user, setUser] = useState({
@@ -54,23 +54,23 @@ export function UserProfile({ navigation }: any) {
             <View style={styles.boxProfile}>
               <Image
                 style={styles.profileImg}
-                source={require("../../../assets/logo.png")}
+                source={require("../../../assets/logo-mb.png")}
               />
             </View>
             <View style={{ paddingHorizontal: 20 }}>
-              <InputLabel editable={editable} title="Nome" value={user.name} />
-              <InputLabel
+              <InputArea editable={editable} title="Nome" value={user.name} />
+              <InputArea
                 editable={editable}
                 title="E-mail"
                 value={user.email}
               />
-              <InputLabel
+              <InputArea
                 editable={editable}
                 title="Password"
                 value={user.password}
               />
-              <InputLabel editable={editable} title="CPF" value={user.cpf} />
-              <InputLabel
+              <InputArea editable={editable} title="CPF" value={user.cpf} />
+              <InputArea
                 editable={editable}
                 title="Tipo de conta"
                 value={user.type}

@@ -5,13 +5,11 @@ export const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    height: "100%",
     backgroundColor: "#000000",
   },
   logo: {
-    paddingTop: 100,
-  },
-  inputData: {
-    width: 280,
+    paddingTop: "15%",
   },
   emailField: {
     backgroundColor: "#ffffff",
@@ -21,12 +19,13 @@ export const styles = StyleSheet.create({
     marginVertical: 10,
     padding: 10,
   },
-  passwordField: {
+  input: {
     backgroundColor: "#ffffff",
     borderRadius: 10,
     width: 292,
     height: 58,
     padding: 10,
+    marginBottom: 10,
   },
   buttons: {
     height: "35%",

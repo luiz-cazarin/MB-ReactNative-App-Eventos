@@ -16,7 +16,7 @@ import { Checkbox } from "react-native-paper";
 import { Header } from "../../components/layout/Header";
 import { Button } from "../../components/layout/Button";
 import { TextLabel } from "../../components/layout/TextLabel";
-import { InputLabel } from "../../components/layout/InputLabel";
+import { InputArea } from "../../components/layout/InputArea";
 
 export function Register({ navigation }: any) {
   const [status, setStatus] = useState("unchecked");
@@ -36,11 +36,11 @@ export function Register({ navigation }: any) {
               Informe os seus dados
             </Text>
           </View>
-          <InputLabel title="Nome" />
-          <InputLabel title="E-mail" />
-          <InputLabel title="Senha" />
-          <InputLabel title="CPF" />
-          <InputLabel title="Tipo de conta" />
+          <InputArea title="Nome" />
+          <InputArea title="E-mail" />
+          <InputArea title="Senha" />
+          <InputArea title="CPF" />
+          <InputArea title="Tipo de conta" />
           <Button
             text="CRIAR CONTA"
             color="#ffff"

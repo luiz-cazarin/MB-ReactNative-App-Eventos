@@ -16,7 +16,7 @@ export const EVENTS = [
       month: "long",
       day: "numeric",
     }),
-    img: "https://blog.even3.com.br/wp-content/uploads/2022/05/17-imagens-de-destaque_guia-de-planejamento-de-eventos.png",
+    img: "https://blog.milvus.com.br/wp-content/uploads/conheca-os-6-principais-eventos-de-ti-11.png",
     organizer: {
       id: "1",
       name: "DF Eventos",
@@ -146,87 +146,9 @@ export const EVENTS = [
       month: "long",
       day: "numeric",
     }),
-    img: "https://blog.even3.com.br/wp-content/uploads/2022/05/17-imagens-de-destaque_guia-de-planejamento-de-eventos.png",
+    img: "https://www.trt4.jus.br/portais/media-noticia/275829/Foto01.jpg",
     organizer: {
       id: "6",
-      name: "DF Eventos",
-      avatar:
-        "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80",
-      email: "dfEventos@gmail.com",
-    },
-  },
-  {
-    id: "7",
-    name: "Evento - 7",
-    description:
-      "Descricao generica do evento - 7 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
-    category: "empresa",
-    price: 37,
-    local: "UCB auditório - 7",
-    cep: "72850120",
-    initalDate: new Date("August 1, 17:00").toLocaleDateString(undefined, {
-      month: "long",
-      day: "numeric",
-    }),
-    finalDate: new Date("August 2, 13:00").toLocaleDateString(undefined, {
-      month: "long",
-      day: "numeric",
-    }),
-    img: "https://blog.even3.com.br/wp-content/uploads/2022/05/17-imagens-de-destaque_guia-de-planejamento-de-eventos.png",
-    organizer: {
-      id: "7",
-      name: "DF Eventos",
-      avatar:
-        "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80",
-      email: "dfEventos@gmail.com",
-    },
-  },
-  {
-    id: "8",
-    name: "Evento - 8",
-    description:
-      "Descricao generica do evento - 8 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
-    category: "empresa",
-    price: 38,
-    local: "UCB auditório - 8",
-    cep: "72850120",
-    initalDate: new Date("August 1, 17:00").toLocaleDateString(undefined, {
-      month: "long",
-      day: "numeric",
-    }),
-    finalDate: new Date("August 2, 13:00").toLocaleDateString(undefined, {
-      month: "long",
-      day: "numeric",
-    }),
-    img: "https://blog.even3.com.br/wp-content/uploads/2022/05/17-imagens-de-destaque_guia-de-planejamento-de-eventos.png",
-    organizer: {
-      id: "8",
-      name: "DF Eventos",
-      avatar:
-        "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80",
-      email: "dfEventos@gmail.com",
-    },
-  },
-  {
-    id: "9",
-    name: "Evento - 9",
-    description:
-      "Descricao generica do evento - 9 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
-    category: "empresa",
-    price: 39,
-    local: "UCB auditório - 9",
-    cep: "72850120",
-    initalDate: new Date("August 1, 17:00").toLocaleDateString(undefined, {
-      month: "long",
-      day: "numeric",
-    }),
-    finalDate: new Date("August 2, 13:00").toLocaleDateString(undefined, {
-      month: "long",
-      day: "numeric",
-    }),
-    img: "https://blog.even3.com.br/wp-content/uploads/2022/05/17-imagens-de-destaque_guia-de-planejamento-de-eventos.png",
-    organizer: {
-      id: "9",
       name: "DF Eventos",
       avatar:
         "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80",

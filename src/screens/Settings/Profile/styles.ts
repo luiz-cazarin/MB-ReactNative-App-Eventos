@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     margin: 28,
     height: 100,
     width: 100,
+    backgroundColor: '#000000'
   },
   title: {
     paddingTop: 15,

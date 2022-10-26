@@ -12,7 +12,7 @@ export function Profile({ navigation }: any) {
           <View style={styles.boxProfile}>
             <Image
               style={styles.profileImg}
-              source={require("../../../assets/logo.png")}
+              source={require("../../../assets/logo-mb.png")}
             />
             <View>
               <Text style={{ fontWeight: "600", fontSize: 18 }}>
