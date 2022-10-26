@@ -4,7 +4,6 @@ import { View, TextInput, Image, Pressable, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 import { USERS } from "../../utils/users";
-import { RadioButton } from "react-native-paper";
 
 export function Login({ navigation }: any) {
   const [email, setEmail] = useState("");

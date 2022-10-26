@@ -1,4 +1,3 @@
-import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
 import { Text, View, Image, Pressable } from "react-native";
 

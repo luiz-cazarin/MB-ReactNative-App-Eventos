@@ -11,14 +11,12 @@ export function OrderFinish({ route, navigation }: any) {
   const [numCreditCard, setNumCreditCard] = useState("");
   const [expirationCreditCard, setExpirationCreditCard] = useState("");
   const [securityCreditCard, setSecurityCreditCard] = useState("");
+  
   useEffect(() => {
     // axios.get...
   }, []);
   function finishOrder() {
     navigation.navigate("home");
-    console.log(numCreditCard);
-    console.log(expirationCreditCard);
-    console.log(securityCreditCard);
   }
   return (
     <Background>
