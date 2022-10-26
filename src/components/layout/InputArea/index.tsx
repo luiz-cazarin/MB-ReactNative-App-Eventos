@@ -6,6 +6,7 @@ export function InputArea({
   placeholder,
   maxLength,
   value,
+  onChangeText,
   keyboardType,
   editable,
   multiline,
@@ -19,6 +20,7 @@ export function InputArea({
         maxLength={maxLength}
         placeholder={placeholder}
         value={value}
+        onChangeText={onChangeText}
         keyboardType={keyboardType}
         editable={editable}
         multiline={multiline}

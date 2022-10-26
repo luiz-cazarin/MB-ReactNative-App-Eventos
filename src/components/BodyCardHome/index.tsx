@@ -6,16 +6,14 @@ import { EventsCard } from "../EventsCard";
 import { EVENTS } from "../../utils/events";
 
 export function BodyCardHome({ eventName, navigation }: any) {
-  const [recomendedEvents, setRecomendedEvents] = useState(EVENTS);
   const [events, setEvents] = useState(EVENTS);
-
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.content}>
           <Text style={styles.title}>Recomendações</Text>
           <FlatList
-            data={recomendedEvents}
+            data={events}
             renderItem={({ item, index }) => (
               <RecommendationsCard navigation={navigation} event={item} />
             )}

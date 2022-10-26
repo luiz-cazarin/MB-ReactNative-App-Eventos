@@ -5,7 +5,7 @@ export const EVENTS = [
     description:
       "Descricao generica do evento - 1 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
     category: "empresa",
-    price: 31.5,
+    price: 35.9,
     local: "UCB auditório - 1",
     cep: "72850120",
     initalDate: new Date("August 1, 17:00").toLocaleDateString(undefined, {
@@ -31,7 +31,7 @@ export const EVENTS = [
     description:
       "Descricao generica do evento - 2 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
     category: "empresa",
-    price: 32.0,
+    price: 22.0,
     local: "UCB auditório - 2",
     cep: "72850120",
     initalDate: new Date("August 1, 17:00").toLocaleDateString(undefined, {
@@ -57,7 +57,7 @@ export const EVENTS = [
     description:
       "Descricao generica do evento - 3 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
     category: "empresa",
-    price: 33.0,
+    price: 15.0,
     local: "UCB auditório - 3",
     cep: "72850120",
     initalDate: new Date("August 1, 17:00").toLocaleDateString(undefined, {
@@ -83,7 +83,7 @@ export const EVENTS = [
     description:
       "Descricao generica do evento - 4 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
     category: "empresa",
-    price: 34.0,
+    price: 40.0,
     local: "UCB auditório - 4",
     cep: "72850120",
     initalDate: new Date("August 1, 17:00").toLocaleDateString(undefined, {
@@ -109,7 +109,7 @@ export const EVENTS = [
     description:
       "Descricao generica do evento - 5 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
     category: "empresa",
-    price: 35.0,
+    price: 99.9,
     local: "UCB auditório - 5",
     cep: "72850120",
     initalDate: new Date("August 1, 17:00").toLocaleDateString(undefined, {
@@ -135,7 +135,7 @@ export const EVENTS = [
     description:
       "Descricao generica do evento - 6 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
     category: "empresa",
-    price: 36,
+    price: 300.0,
     local: "UCB auditório - 6",
     cep: "72850120",
     initalDate: new Date("August 1, 17:00").toLocaleDateString(undefined, {

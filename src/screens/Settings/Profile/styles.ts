@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
   },
   boxProfile: {
     width: "100%",
-    display: "flex",
     flexDirection: "row",
     alignItems: "center",
   },

@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    display: "flex",
   },
   divisor: {
     height: 8,
@@ -40,7 +39,6 @@ export const styles = StyleSheet.create({
   boxTotalPrice: {
     width: "100%",
     paddingHorizontal: 25,
-    display: "flex",
     justifyContent: "space-between",
     flexDirection: "row",
   },

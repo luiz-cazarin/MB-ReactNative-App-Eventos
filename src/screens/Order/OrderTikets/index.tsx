@@ -79,7 +79,12 @@ export function OrderTickets({ route, navigation }: any) {
             text="COMPRAR INGRESSO"
             color="#ffff"
             backgroundColor="#6AD03A"
-            event={() => navigation.navigate("order-finish")}
+            event={() =>
+              navigation.navigate("order-finish", {
+                name: "Luiz Claudio",
+                email: "cazarin.junior@gmail.com",
+              })
+            }
           />
         </View>
       </SafeAreaView>

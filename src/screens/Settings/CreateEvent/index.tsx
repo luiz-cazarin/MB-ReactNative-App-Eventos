@@ -5,8 +5,10 @@ import { View, ScrollView } from "react-native";
 import { Button } from "../../../components/layout/Button";
 import { Header } from "../../../components/layout/Header";
 import { InputArea } from "../../../components/layout/InputArea";
+import { FormEvent } from "../../../components/FormEvent";
 
 export function CreateEvent({ route, navigation }: any) {
+  console.log(route.params)
   return (
     <Background>
       <SafeAreaView style={styles.container}>
@@ -16,31 +18,7 @@ export function CreateEvent({ route, navigation }: any) {
           title="Criar Evento"
         />
         <ScrollView>
-          <View style={styles.box}>
-            <InputArea title="URL da imagem" />
-            <InputArea title="Nome do evento" />
-            <InputArea title="Descrição do evento" multiline={true} />
-            <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-            >
-              <InputArea mid={true} title="Inicio" placeholder="__/__/__" />
-              <InputArea mid={true} title="Fim" placeholder="__/__/__" />
-            </View>
-            <InputArea title="Nome do local" />
-            <InputArea title="CEP do local" />
-            <InputArea title="Categoria do evento" placeholder="Empresa" />
-            <InputArea title="Valor do ingreço" placeholder="R$" />
-            <Button
-              text="CRIAR EVENTO"
-              color="#ffff"
-              backgroundColor="#6AD03A"
-              event={() => console.log("criou o evento")}
-            />
-          </View>
+          <FormEvent navigation={navigation} />
         </ScrollView>
       </SafeAreaView>
     </Background>

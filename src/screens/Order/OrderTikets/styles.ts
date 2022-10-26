@@ -6,7 +6,6 @@ export const styles = StyleSheet.create({
   },
   headerPrice: {
     paddingHorizontal: 20,
-    display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -26,7 +25,6 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 1,
     borderColor: "#C5C5C5",
-    display: "flex",
     justifyContent: "space-between",
     flexDirection: "row",
     alignItems: "center",

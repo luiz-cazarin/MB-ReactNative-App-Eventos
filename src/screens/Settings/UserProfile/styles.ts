@@ -13,7 +13,6 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
   },
   boxProfile: {
-    display: "flex",
     alignItems: "center",
   },
   profileImg: {

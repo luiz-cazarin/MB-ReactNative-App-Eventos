@@ -1,15 +1,9 @@
 import { StyleSheet } from "react-native";
-import { THEME } from "../../theme";
 
 export const styles = StyleSheet.create({
   container: {
-    display: "flex",
-    alignItems: "flex-start",
     marginRight: 16,
-    shadowColor: "#171717",
-    shadowOffset: { width: -1, height: 1 },
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
+    width: 137,
   },
   img: {
     width: 137,
