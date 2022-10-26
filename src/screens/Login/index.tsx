@@ -18,7 +18,7 @@ export function Login({ navigation }: any) {
         (user.email === email || user.name === email) &&
         user.password === password
     );
-    if (!user) {
+    if (user) {
       navigation.navigate("Main");
     } else {
       console.log("Error!");
