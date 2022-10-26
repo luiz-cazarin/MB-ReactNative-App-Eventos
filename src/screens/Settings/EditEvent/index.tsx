@@ -7,6 +7,7 @@ import { FormEvent } from "../../../components/FormEvent";
 import { Header } from "../../../components/layout/Header";
 import { InputArea } from "../../../components/layout/InputArea";
 import { Button } from "../../../components/layout/Button";
+import { ToggleButton } from "react-native-paper";
 
 export function EditEvent({ route, navigation }: any) {
   const [name, setEventName] = useState(route.params.event.name);
@@ -24,7 +25,24 @@ export function EditEvent({ route, navigation }: any) {
   const [cep, setEventCep] = useState(route.params.event.cep);
   const [organizer, setEventOrganizer] = useState(route.params.event.organizer);
 
-  function updateEvent() {}
+  function updateEvent() {
+    setEventOrganizer("/userAuth");
+    const event = {
+      name: name,
+      description: description,
+      category: category,
+      price: price,
+      local: local,
+      initalDate: initalDate,
+      finalDate: finalDate,
+      img: img,
+      cep: cep,
+      organizer: organizer,
+    };
+    // async -> try -> axios -> post -> updateEvent
+    console.log(event);
+    navigation.goBack();
+  }
   return (
     <Background>
       <SafeAreaView style={styles.container}>
@@ -88,6 +106,13 @@ export function EditEvent({ route, navigation }: any) {
               value={category}
               onChangeText={setEventCategory}
             />
+            <ToggleButton.Row
+              value={category}
+              onValueChange={(category) => setEventCategory(category)}
+            >
+              <ToggleButton icon="briefcase" value="Empresa" />
+              <ToggleButton icon="school" value="Universidade" />
+            </ToggleButton.Row>
             <InputArea
               title="Valor do ingreço"
               placeholder="R$"
@@ -96,7 +121,7 @@ export function EditEvent({ route, navigation }: any) {
               onChangeText={setEventPrice}
             />
             <Button
-              text="CRIAR EVENTO"
+              text="SALVAR ALTERAÇÕES"
               color="#ffff"
               backgroundColor="#6AD03A"
               event={updateEvent}

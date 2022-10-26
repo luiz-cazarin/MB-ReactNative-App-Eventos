@@ -4,7 +4,7 @@ export const EVENTS = [
     name: "Evento - 1",
     description:
       "Descricao generica do evento - 1 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
-    category: "empresa",
+    category: "Empresa",
     price: 35.9,
     local: "UCB auditório - 1",
     cep: "72850120",
@@ -30,7 +30,7 @@ export const EVENTS = [
     name: "Evento - 2",
     description:
       "Descricao generica do evento - 2 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
-    category: "empresa",
+    category: "Empresa",
     price: 22.0,
     local: "UCB auditório - 2",
     cep: "72850120",
@@ -56,7 +56,7 @@ export const EVENTS = [
     name: "Evento - 3",
     description:
       "Descricao generica do evento - 3 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
-    category: "empresa",
+    category: "Universidade",
     price: 15.0,
     local: "UCB auditório - 3",
     cep: "72850120",
@@ -82,7 +82,7 @@ export const EVENTS = [
     name: "Evento - 4",
     description:
       "Descricao generica do evento - 4 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
-    category: "empresa",
+    category: "Universidade",
     price: 40.0,
     local: "UCB auditório - 4",
     cep: "72850120",
@@ -108,7 +108,7 @@ export const EVENTS = [
     name: "Evento - 5",
     description:
       "Descricao generica do evento - 5 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
-    category: "empresa",
+    category: "Empresa",
     price: 99.9,
     local: "UCB auditório - 5",
     cep: "72850120",
@@ -134,7 +134,7 @@ export const EVENTS = [
     name: "Evento - 6",
     description:
       "Descricao generica do evento - 6 Vamos falar sobre Scrum, framework para gerenciamento de projetos com ênfase inicial",
-    category: "empresa",
+    category: "Empresa",
     price: 300.0,
     local: "UCB auditório - 6",
     cep: "72850120",

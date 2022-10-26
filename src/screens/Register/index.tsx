@@ -8,13 +8,15 @@ import { Header } from "../../components/layout/Header";
 import { Button } from "../../components/layout/Button";
 import { InputArea } from "../../components/layout/InputArea";
 
+import { ToggleButton } from "react-native-paper";
+
 export function Register({ navigation }: any) {
-  const [name, setName] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [avatar, setAvatar] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [cpf, setCpf] = useState(null);
-  const [type, setType] = useState(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [avatar, setAvatar] = useState("");
+  const [password, setPassword] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [type, setType] = useState("");
 
   function signUp() {
     const user = {
@@ -26,10 +28,12 @@ export function Register({ navigation }: any) {
       type: type,
     };
     if (user.name && user.email && user.password && user.type) {
+      // async -> try -> axios -> post -> signUp
       console.log("Conta criada");
       navigation.navigate("Main");
     } else {
-      console.log("!");
+      // validate form -> show errors -> try again
+      console.log("try again!");
     }
   }
 
@@ -83,8 +87,15 @@ export function Register({ navigation }: any) {
               title="Tipo de usuario"
               placeholder="0 para organizador 1 para cliente"
               value={type}
-              onChangeText={setType}
+              editable={false}
             />
+            <ToggleButton.Row
+              value={type}
+              onValueChange={(type) => setType(type)}
+            >
+              <ToggleButton icon="account-tie" value="Organizador" />
+              <ToggleButton icon="account" value="Cliente" />
+            </ToggleButton.Row>
             <Button
               text="CRIAR CONTA"
               color="#ffff"

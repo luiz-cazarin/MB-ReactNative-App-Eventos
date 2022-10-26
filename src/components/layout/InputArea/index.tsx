@@ -8,6 +8,7 @@ export function InputArea({
   value,
   onChangeText,
   keyboardType,
+  secureTextEntry,
   editable,
   multiline,
   mid,
@@ -22,6 +23,7 @@ export function InputArea({
         value={value}
         onChangeText={onChangeText}
         keyboardType={keyboardType}
+        secureTextEntry={secureTextEntry}
         editable={editable}
         multiline={multiline}
       />

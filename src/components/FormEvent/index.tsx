@@ -3,7 +3,7 @@ import { styles } from "./styles";
 import { Button } from "../layout/Button";
 import { InputArea } from "../layout/InputArea";
 import { useState } from "react";
-
+import { ToggleButton } from "react-native-paper";
 export interface Props {
   navigation: any;
 }
@@ -11,7 +11,7 @@ export interface Props {
 export function FormEvent({ navigation }: Props) {
   const [name, setEventName] = useState("");
   const [description, setEventDescription] = useState("");
-  const [category, setEventCategory] = useState("");
+  const [category, setEventCategory] = useState("Empresa");
   const [price, setEventPrice] = useState(0);
   const [local, setEventLocal] = useState("");
   const [initalDate, setEventInitalDate] = useState("");
@@ -34,6 +34,7 @@ export function FormEvent({ navigation }: Props) {
       cep: cep,
       organizer: organizer,
     };
+    // async -> try -> axios -> post -> createEvent
     console.log(event);
     navigation.navigate("user-events");
   }
@@ -89,10 +90,17 @@ export function FormEvent({ navigation }: Props) {
         />
         <InputArea
           title="Categoria do evento"
-          placeholder="Empresa"
           value={category}
+          editable={false}
           onChangeText={setEventCategory}
         />
+        <ToggleButton.Row
+          value={category}
+          onValueChange={(category) => setEventCategory(category)}
+        >
+          <ToggleButton icon="briefcase" value="Empresa" />
+          <ToggleButton icon="school" value="Universidade" />
+        </ToggleButton.Row>
         <InputArea
           title="Valor do ingreço"
           placeholder="R$"
