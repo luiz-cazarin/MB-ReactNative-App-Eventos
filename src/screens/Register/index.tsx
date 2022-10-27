@@ -85,7 +85,7 @@ export function Register({ navigation }: any) {
             />
             <InputArea
               title="Tipo de usuario"
-              placeholder="0 para organizador 1 para cliente"
+              placeholder="Selecione o tipo de usuario"
               value={type}
               editable={false}
             />

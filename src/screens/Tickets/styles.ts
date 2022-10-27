@@ -4,6 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 15,
+    marginBottom: 70,
   },
   title: {
     fontSize: 28,

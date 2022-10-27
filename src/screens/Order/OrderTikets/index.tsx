@@ -7,10 +7,13 @@ import { useState, useEffect } from "react";
 import { EVENTS } from "../../../utils/events";
 import { Button } from "../../../components/layout/Button";
 import { Header } from "../../../components/layout/Header";
+import { USERS } from "../../../utils/users";
 
 export function OrderTickets({ route, navigation }: any) {
   const [dataBaseTikets, setDataBaseTikets] = useState(EVENTS);
+  const [userAuth, setUserAuth] = useState(USERS);
   const [amountTicket, setAmountTicket] = useState(0);
+  const [totalTicket, setTotalTicket] = useState(route.params.price);
 
   useEffect(() => {
     // axios.get...
@@ -31,6 +34,11 @@ export function OrderTickets({ route, navigation }: any) {
     setAmountTicket(amount);
   }
 
+  useEffect(() => {
+    let total = route.params.price * amountTicket;
+    setTotalTicket(total);
+  }, [amountTicket]);
+
   return (
     <Background>
       <SafeAreaView style={styles.container}>
@@ -42,9 +50,7 @@ export function OrderTickets({ route, navigation }: any) {
         />
         <View style={styles.headerPrice}>
           <Text style={styles.title}>Ingressos</Text>
-          <Text style={styles.totalPrice}>
-            R$ {route.params.price.toFixed(2)}
-          </Text>
+          <Text style={styles.totalPrice}>R$ {totalTicket.toFixed(2)}</Text>
         </View>
         <View style={styles.box}>
           <View style={styles.boxTicket}>
@@ -79,12 +85,15 @@ export function OrderTickets({ route, navigation }: any) {
             text="COMPRAR INGRESSO"
             color="#ffff"
             backgroundColor="#6AD03A"
-            event={() =>
-              navigation.navigate("order-finish", {
-                name: "Luiz Claudio",
-                email: "cazarin.junior@gmail.com",
-              })
-            }
+            event={() => {
+              if (amountTicket > 0) {
+                navigation.navigate("order-finish", {
+                  name: userAuth[0].name,
+                  email: userAuth[0].email,
+                  totalTicket: totalTicket,
+                });
+              }
+            }}
           />
         </View>
       </SafeAreaView>

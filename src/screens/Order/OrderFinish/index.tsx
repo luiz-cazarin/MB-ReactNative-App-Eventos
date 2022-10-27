@@ -70,7 +70,7 @@ export function OrderFinish({ route, navigation }: any) {
           </View>
           <View style={styles.boxTotalPrice}>
             <Text style={{ fontSize: 24 }}>Total</Text>
-            <Text style={{ fontSize: 24 }}>R$ 60,00</Text>
+            <Text style={{ fontSize: 24 }}>R$ {route.params.totalTicket.toFixed(2)}</Text>
           </View>
           <View style={styles.boxButton}>
             <Button

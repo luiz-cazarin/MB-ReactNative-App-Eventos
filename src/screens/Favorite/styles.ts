@@ -17,6 +17,6 @@ export const styles = StyleSheet.create({
   },
   listEvents: {
     width: "100%",
-    marginBottom: 110,
+    marginBottom: 120,
   },
 });
