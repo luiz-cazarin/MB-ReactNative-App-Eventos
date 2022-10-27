@@ -13,7 +13,7 @@ export const USERS = [
     id: "2",
     name: "user",
     email: "user@gmail.com",
-    password: "4321",
+    password: "1234",
     type: "Cliente",
     cpf: "11122233344",
     avatar:

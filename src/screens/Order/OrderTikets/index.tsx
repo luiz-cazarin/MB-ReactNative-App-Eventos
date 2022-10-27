@@ -7,31 +7,21 @@ import { useState, useEffect } from "react";
 import { EVENTS } from "../../../utils/events";
 import { Button } from "../../../components/layout/Button";
 import { Header } from "../../../components/layout/Header";
-import { USERS } from "../../../utils/users";
-
+import { useSelector } from "react-redux";
 export function OrderTickets({ route, navigation }: any) {
-  const [dataBaseTikets, setDataBaseTikets] = useState(EVENTS);
-  const [userAuth, setUserAuth] = useState(USERS);
-  const [amountTicket, setAmountTicket] = useState(0);
+  const state = useSelector((state: any) => state.user);
+  const [events] = useState(EVENTS);
+  const [amountTicket, setAmountTicket] = useState(1);
   const [totalTicket, setTotalTicket] = useState(route.params.price);
 
-  useEffect(() => {
-    // axios.get...
-    let currTicket = dataBaseTikets.filter(
-      (item) => item.id === route.params.eventId
-    );
-  }, []);
+  const [userAuth] = useState(state);
 
   function minusTicket() {
-    let amount = amountTicket - 1;
-    if (amount >= 0) {
-      setAmountTicket(amount);
-    }
+    setAmountTicket(amountTicket > 0 ? amountTicket - 1 : amountTicket);
   }
 
   function plusTicket() {
-    let amount = amountTicket + 1;
-    setAmountTicket(amount);
+    setAmountTicket(amountTicket + 1);
   }
 
   useEffect(() => {
@@ -88,8 +78,8 @@ export function OrderTickets({ route, navigation }: any) {
             event={() => {
               if (amountTicket > 0) {
                 navigation.navigate("order-finish", {
-                  name: userAuth[0].name,
-                  email: userAuth[0].email,
+                  name: userAuth.name,
+                  email: userAuth.email,
                   totalTicket: totalTicket,
                 });
               }

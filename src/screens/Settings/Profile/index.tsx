@@ -5,22 +5,26 @@ import { Background } from "../../../components/Background";
 import { Text, View, Image, Pressable } from "react-native";
 import { Button } from "../../../components/layout/Button";
 import { USERS } from "../../../utils/users";
+import { logout } from "../../../store/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 export function Profile({ navigation }: any) {
-  const [users, setUsers] = useState(USERS);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [avatar, setAvatar] = useState("https://www.w3schools.com/howto/img_avatar.png");
-  useEffect(() => {
-    // simulate get User auth
-    let user = users.find((user) => user.id === "1");
-    if (user) {
-      setName(user?.name);
-      setEmail(user?.email);
-      setAvatar(user?.avatar);
-      console.log(user);
-    }
-  }, []);
+  const dispatch = useDispatch();
+  const state = useSelector((state: any) => state.user);
+
+  // const [users, setUsers] = useState(USERS);
+  const [name] = useState(state.name);
+  const [email] = useState(state.email);
+  const [avatar] = useState(
+    state.avatar
+      ? state.avatar
+      : "https://www.w3schools.com/howto/img_avatar.png"
+  );
+
+  function Logout() {
+    dispatch(logout());
+    navigation.navigate("login");
+  }
 
   return (
     <Background>
@@ -65,9 +69,7 @@ export function Profile({ navigation }: any) {
             text="Sair da conta"
             color="#ff0000"
             backgroundColor="#F8F8F8"
-            event={() => {
-              navigation.navigate("login");
-            }}
+            event={Logout}
           ></Button>
           <Text style={{ color: "#B0B0B0" }}>VERSÃO 1.0</Text>
           <Text style={{ color: "#B0B0B0" }}>

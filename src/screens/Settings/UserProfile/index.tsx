@@ -8,15 +8,23 @@ import { InputArea } from "../../../components/layout/InputArea";
 import { useEffect, useState } from "react";
 import { ToggleButton } from "react-native-paper";
 import { USERS } from "../../../utils/users";
+import { useDispatch, useSelector } from "react-redux";
 
 export function UserProfile({ navigation }: any) {
+  const dispatch = useDispatch();
+  const state = useSelector((state: any) => state.user);
+
   const [users, setUsers] = useState(USERS);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [type, setType] = useState("Cliente");
-  const [avatar, setAvatar] = useState("https://www.w3schools.com/howto/img_avatar.png");
+  const [name, setName] = useState(state.name);
+  const [email, setEmail] = useState(state.email);
+  const [password, setPassword] = useState(state.password);
+  const [cpf, setCpf] = useState(state.cpf);
+  const [type, setType] = useState(state.type);
+  const [avatar, setAvatar] = useState(
+    state.avatar
+      ? state.avatar
+      : "https://www.w3schools.com/howto/img_avatar.png"
+  );
 
   const [editable, setEditable] = useState(false);
   const [color, setColor] = useState("false");
@@ -27,7 +35,7 @@ export function UserProfile({ navigation }: any) {
   }
   function updateAccount() {
     console.log("update account");
-    navigation.navigate('home')
+    navigation.navigate("home");
   }
 
   function deleteAccount() {
@@ -37,25 +45,12 @@ export function UserProfile({ navigation }: any) {
   }
 
   useEffect(() => {
-    // simulate get User auth
-    let user = users.find((user) => user.id === "1");
-    if (user) {
-      setName(user?.name);
-      setEmail(user?.email);
-      setPassword(user?.password);
-      setCpf(user?.cpf);
-      setType(user?.type);
-      setAvatar(user?.avatar);
-      console.log(user);
+    if (editable) {
+      setColor("#3B7CDE");
+    } else {
+      setColor("#000000");
     }
-  }, []),
-    useEffect(() => {
-      if (editable) {
-        setColor("#3B7CDE");
-      } else {
-        setColor("#000000");
-      }
-    }, [editable]);
+  }, [editable]);
 
   return (
     <Background>

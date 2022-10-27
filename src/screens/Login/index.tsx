@@ -4,19 +4,33 @@ import { View, TextInput, Image, Pressable, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 import { USERS } from "../../utils/users";
+import { useDispatch } from "react-redux";
+import { changeUser } from "../../store/userSlice";
 
 export function Login({ navigation }: any) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   // simulate auth
-  const [listUser, setListUser] = useState(USERS);
+  const [listUser] = useState(USERS);
+  const dispatch = useDispatch();
 
   function handleSignIn() {
     const user = listUser.find(
       (user) =>
         (user.email === email || user.name === email) &&
         user.password === password
+    );
+    dispatch(
+      changeUser({
+        id: user?.id,
+        name: user?.name,
+        email: user?.email,
+        type: user?.type,
+        avatar: user?.avatar,
+        cpf: user?.cpf,
+        password: user?.password,
+      })
     );
     if (user) {
       navigation.navigate("Main");

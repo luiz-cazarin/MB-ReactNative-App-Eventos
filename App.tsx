@@ -10,6 +10,8 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { Loading } from "./src/components/Loading";
 import { Stacks } from "./src/stacks";
+import { Provider } from "react-redux";
+import store from './src/store'
 
 export default function App() {
   const [fontsLoader] = useFonts({
@@ -20,8 +22,10 @@ export default function App() {
   });
   return (
     <NavigationContainer>
-      <StatusBar backgroundColor="transparent" translucent />
-      {fontsLoader ? <Stacks isSignedIn={true} /> : <Loading />}
+      <Provider store={store}>
+        <StatusBar backgroundColor="transparent" translucent />
+        {fontsLoader ? <Stacks isSignedIn={true} /> : <Loading />}
+      </Provider>
     </NavigationContainer>
   );
 }
