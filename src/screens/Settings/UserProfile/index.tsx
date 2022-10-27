@@ -7,14 +7,13 @@ import { Header } from "../../../components/layout/Header";
 import { InputArea } from "../../../components/layout/InputArea";
 import { useEffect, useState } from "react";
 import { ToggleButton } from "react-native-paper";
-import { USERS } from "../../../utils/users";
 import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../../store/userSlice";
 
 export function UserProfile({ navigation }: any) {
   const dispatch = useDispatch();
   const state = useSelector((state: any) => state.user);
 
-  const [users, setUsers] = useState(USERS);
   const [name, setName] = useState(state.name);
   const [email, setEmail] = useState(state.email);
   const [password, setPassword] = useState(state.password);
@@ -27,7 +26,7 @@ export function UserProfile({ navigation }: any) {
   );
 
   const [editable, setEditable] = useState(false);
-  const [color, setColor] = useState("false");
+  const [color, setColor] = useState("");
 
   function handleEditable() {
     let aux = editable;
@@ -39,8 +38,9 @@ export function UserProfile({ navigation }: any) {
   }
 
   function deleteAccount() {
-    console.log("deleteAccount");
     // async -> try -> axios -> post -> deleteAccount
+    dispatch(logout());
+    console.log("deleteAccount -> to login page");
     navigation.navigate("login");
   }
 
@@ -69,6 +69,12 @@ export function UserProfile({ navigation }: any) {
               <Image style={styles.profileImg} source={{ uri: avatar }} />
             </View>
             <View style={{ paddingHorizontal: 20 }}>
+              <InputArea
+                editable={editable}
+                title="URL da foto de perfil"
+                value={avatar}
+                onChangeText={setAvatar}
+              />
               <InputArea
                 editable={editable}
                 title="Nome"

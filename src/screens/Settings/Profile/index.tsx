@@ -1,18 +1,15 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Background } from "../../../components/Background";
 import { Text, View, Image, Pressable } from "react-native";
 import { Button } from "../../../components/layout/Button";
-import { USERS } from "../../../utils/users";
 import { logout } from "../../../store/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export function Profile({ navigation }: any) {
   const dispatch = useDispatch();
   const state = useSelector((state: any) => state.user);
-
-  // const [users, setUsers] = useState(USERS);
   const [name] = useState(state.name);
   const [email] = useState(state.email);
   const [avatar] = useState(
