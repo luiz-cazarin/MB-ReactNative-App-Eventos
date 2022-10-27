@@ -40,7 +40,6 @@ export function EditEvent({ route, navigation }: any) {
       organizer: organizer,
     };
     // async -> try -> axios -> post -> updateEvent
-    console.log(event);
     navigation.goBack();
   }
   return (
@@ -116,7 +115,7 @@ export function EditEvent({ route, navigation }: any) {
             <InputArea
               title="Valor do ingreço"
               placeholder="R$"
-              value={price.toFixed(2).toString()}
+              value={price}
               keyboardType="decimal-pad"
               onChangeText={setEventPrice}
             />

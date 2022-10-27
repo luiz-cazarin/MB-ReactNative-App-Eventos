@@ -1,14 +1,11 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
 import { Background } from "../../../components/Background";
-import { View, ScrollView } from "react-native";
-import { Button } from "../../../components/layout/Button";
+import { ScrollView } from "react-native";
 import { Header } from "../../../components/layout/Header";
-import { InputArea } from "../../../components/layout/InputArea";
 import { FormEvent } from "../../../components/FormEvent";
 
 export function CreateEvent({ route, navigation }: any) {
-  console.log(route.params)
   return (
     <Background>
       <SafeAreaView style={styles.container}>

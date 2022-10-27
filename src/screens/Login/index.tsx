@@ -2,22 +2,23 @@ import * as React from "react";
 import { styles } from "./styles";
 import { View, TextInput, Image, Pressable, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useState } from "react";
-import { USERS } from "../../utils/users";
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { changeUser } from "../../store/userSlice";
 
-export function Login({ navigation }: any) {
+export function Login({ navigation, route }: any) {
+  const dispatch = useDispatch();
+  const state = useSelector((state: any) => state.users);
+
+  const [listUser, setListUser] = useState(state.arr);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   // simulate auth
-  const [listUser] = useState(USERS);
-  const dispatch = useDispatch();
-
   function handleSignIn() {
+    setListUser(state.arr);
     const user = listUser.find(
-      (user) =>
+      (user: any) =>
         (user.email === email || user.name === email) &&
         user.password === password
     );

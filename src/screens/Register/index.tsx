@@ -7,13 +7,18 @@ import { Background } from "../../components/Background";
 import { Header } from "../../components/layout/Header";
 import { Button } from "../../components/layout/Button";
 import { InputArea } from "../../components/layout/InputArea";
-
 import { ToggleButton } from "react-native-paper";
 
+import { useDispatch } from "react-redux";
+import { registerUser } from "../../store/usersSlice";
+
 export function Register({ navigation }: any) {
+  const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [avatar, setAvatar] = useState("https://www.w3schools.com/howto/img_avatar.png");
+  const [avatar, setAvatar] = useState(
+    "https://www.w3schools.com/howto/img_avatar.png"
+  );
   const [password, setPassword] = useState("");
   const [cpf, setCpf] = useState("");
   const [type, setType] = useState("");
@@ -28,12 +33,13 @@ export function Register({ navigation }: any) {
       type: type,
     };
     if (user.name && user.email && user.password && user.type) {
-      // async -> try -> axios -> post -> signUp
-      console.log("Conta criada");
-      navigation.navigate("Main");
+      dispatch(registerUser(user));
+      navigation.navigate("login", {
+        navigation: navigation,
+        makeLogin: false,
+      });
     } else {
-      // validate form -> show errors -> try again
-      console.log("try again!");
+      console.log("Error!");
     }
   }
 
@@ -75,6 +81,7 @@ export function Register({ navigation }: any) {
               title="Senha"
               placeholder="********"
               value={password}
+              secureTextEntry={true}
               onChangeText={setPassword}
             />
             <InputArea

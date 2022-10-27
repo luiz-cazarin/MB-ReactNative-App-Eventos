@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import { styles } from "./styles";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-export function EventCardActions({ event, navigation }: any) {
+export function EventCardActions({ event, navigation, deleteEvent }: any) {
   return (
     <View style={styles.container}>
       <View style={styles.box}>
@@ -28,7 +28,7 @@ export function EventCardActions({ event, navigation }: any) {
             name="delete-outline"
             size={28}
             color="#EE3C3C"
-            onPress={() => console.log("delete")}
+            onPress={() => deleteEvent(event)}
           />
         </View>
       </View>
