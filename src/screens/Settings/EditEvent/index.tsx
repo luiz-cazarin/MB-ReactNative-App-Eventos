@@ -1,15 +1,18 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
 import { Background } from "../../../components/Background";
-import { Text, View, ScrollView } from "react-native";
+import { View, ScrollView } from "react-native";
 import { useState, useEffect } from "react";
-import { FormEvent } from "../../../components/FormEvent";
 import { Header } from "../../../components/layout/Header";
 import { InputArea } from "../../../components/layout/InputArea";
 import { Button } from "../../../components/layout/Button";
 import { ToggleButton } from "react-native-paper";
+import { useDispatch } from "react-redux";
+import { updateEventData } from "../../../store/eventsSlice";
+import { newEvent } from "../../../store/eventsSlice";
 
 export function EditEvent({ route, navigation }: any) {
+  const dispatch = useDispatch();
   const [name, setEventName] = useState(route.params.event.name);
   const [description, setEventDescription] = useState(
     route.params.event.description
@@ -23,11 +26,10 @@ export function EditEvent({ route, navigation }: any) {
   const [finalDate, setEventFinalDate] = useState(route.params.event.finalDate);
   const [img, setEventImg] = useState(route.params.event.img);
   const [cep, setEventCep] = useState(route.params.event.cep);
-  const [organizer, setEventOrganizer] = useState(route.params.event.organizer);
 
   function updateEvent() {
-    setEventOrganizer("/userAuth");
     const event = {
+      id: route.params.event.id,
       name: name,
       description: description,
       category: category,
@@ -37,9 +39,8 @@ export function EditEvent({ route, navigation }: any) {
       finalDate: finalDate,
       img: img,
       cep: cep,
-      organizer: organizer,
     };
-    // async -> try -> axios -> post -> updateEvent
+    dispatch(updateEventData(event));
     navigation.goBack();
   }
   return (
@@ -115,7 +116,7 @@ export function EditEvent({ route, navigation }: any) {
             <InputArea
               title="Valor do ingreço"
               placeholder="R$"
-              value={price}
+              value={`${price}`}
               keyboardType="decimal-pad"
               onChangeText={setEventPrice}
             />

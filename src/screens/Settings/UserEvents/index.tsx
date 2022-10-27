@@ -26,7 +26,7 @@ export function UserEvents({ navigation }: any) {
       <SafeAreaView style={styles.container}>
         <Header
           iconLeft="arrow-back-ios"
-          eventLeft={() => navigation.goBack()}
+          eventLeft={() => navigation.navigate('profile')}
           title="Meus eventos"
         />
         <FlatList

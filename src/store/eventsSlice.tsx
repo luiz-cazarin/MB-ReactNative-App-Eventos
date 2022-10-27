@@ -14,10 +14,11 @@ export const slice = createSlice({
         arr: state.arr.concat(payload),
       };
     },
-    updateEvent(state, { payload }) {
+    updateEventData(state, { payload }) {
       return {
-        // I'ts not ready
-        arr: state.arr.filter((item: any) => {}),
+        arr: state.arr.map((item, i) =>
+          item.id === payload.id ? { ...item, name: payload.name } : item
+        ),
       };
     },
     removeEvent(state, { payload }) {
@@ -28,7 +29,7 @@ export const slice = createSlice({
   },
 });
 
-export const { newEvent, removeEvent } = slice.actions;
+export const { newEvent, updateEventData, removeEvent } = slice.actions;
 
 export const selectEvents = (state: any) => state.events;
 
