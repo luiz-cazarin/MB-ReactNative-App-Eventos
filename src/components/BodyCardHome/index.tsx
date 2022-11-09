@@ -3,18 +3,25 @@ import { styles } from "./styles";
 import { useState, useEffect } from "react";
 import { RecommendationsCard } from "../RecommendationsCard";
 import { EventsCard } from "../EventsCard";
-import { EVENTS } from "../../utils/events";
 import { useSelector } from "react-redux";
 
 export function BodyCardHome({ eventName, navigation }: any) {
-  const state = useSelector((state: any) => state.events.arr);
+  const events = useSelector((state: any) => state.events.arr);
+  const [filterList, setFilterList] = useState([]);
+
+  useEffect(() => {
+    let newList = events.filter((el: any) =>
+      el.name.toLowerCase().includes(eventName.toLowerCase())
+    );
+    setFilterList(newList);
+  }, [eventName]);
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.content}>
           <Text style={styles.title}>Recomendações</Text>
           <FlatList
-            data={state}
+            data={events}
             renderItem={({ item, index }) => (
               <RecommendationsCard navigation={navigation} event={item} />
             )}
@@ -26,7 +33,7 @@ export function BodyCardHome({ eventName, navigation }: any) {
         <Text style={styles.title}>Eventos</Text>
         <View style={styles.containerEvents}>
           <View style={styles.boxEvents}>
-            {state.map((event: any, idx: any) => (
+            {filterList.map((event: any, idx: any) => (
               <EventsCard
                 navigation={navigation}
                 event={event}

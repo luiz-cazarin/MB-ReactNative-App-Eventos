@@ -13,7 +13,6 @@ import { logout } from "../../../store/userSlice";
 export function UserProfile({ navigation }: any) {
   const dispatch = useDispatch();
   const state = useSelector((state: any) => state.user);
-
   const [name, setName] = useState(state.name);
   const [email, setEmail] = useState(state.email);
   const [password, setPassword] = useState(state.password);
